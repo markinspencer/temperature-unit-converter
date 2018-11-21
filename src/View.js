@@ -27,15 +27,15 @@ const unitSection = (dispatch, unit, value) =>
     )
   ]);
 
-function view(dispatch, model) {
+const view = (dispatch, model) => {
   return div({ className: "mw6 center" }, [
     h1({ className: "f2 pv2 bb" }, "Temperature Unit Converter"),
     div({ className: "flex" }, [
       unitSection(dispatch, model.leftUnit, model.leftValue),
       unitSection(dispatch, model.rightUnit, model.rightValue)
     ]),
-    pre(JSON.stringify(model, null, 2))
+    pre(JSON.stringify(model, null, 2)) // only for development
   ]);
-}
+};
 
 export default view;
